@@ -23,7 +23,7 @@ const config = {
 	db: {
 		// type: 'local',
 		type: 'redis',
-		initUrl: '/allList'
+		initUrl: 'http://www.flypie.cn:9999/allList'
 	}
 }
 
