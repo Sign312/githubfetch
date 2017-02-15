@@ -1,8 +1,7 @@
 const config = {
 	redis: {
 		host: 'www.flypie.cn',
-		password: '03120019root',
-		// host: 'localhost'
+		password: '03120019root'
 	},
 	language: {
 		defaultLanguage: 'JavaScript',

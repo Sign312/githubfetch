@@ -32,7 +32,8 @@ service.updateList = async function () {
 			list = await fetcher.getList(item)
 		}
 		await db.setList(item, list)
-		await fileCmd.wait(1000)
+		//避免被github发现
+		await fileCmd.wait(2000)
 	}
 }
 

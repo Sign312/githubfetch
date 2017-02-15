@@ -31,7 +31,7 @@ db.setList = async function (language, list) {
 	await fileCmd.cat(localDataPath, JSON.stringify(allList))
 }
 
-db.init = async function () {
+db.init = function () {
 	return new Promise((resolve, reject) => {
 		axios.get(config.db.initUrl)
 			.then((res) => {
@@ -43,5 +43,7 @@ db.init = async function () {
 			}).catch(err => reject(err))
 	})
 }
+
+db.init()
 
 module.exports = db
