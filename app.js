@@ -1,4 +1,4 @@
-let Koa = require('Koa')
+let Koa = require('koa')
 let cors = require('koa-cors')
 let bodyparser = require('koa-bodyparser')
 var path = require('path')
