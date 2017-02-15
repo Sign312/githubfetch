@@ -7,7 +7,7 @@ const fetcher = {}
 
 fetcher.getList = language => {
 	return new Promise((resolve, reject) => {
-		let baseUrl = `https://github.com/search?l=${language}&q=stars%3A%3E10000&type=Repositories&ref=searchresults`
+		let baseUrl = `https://github.com/search?l=${language}&q=stars%3A%3E1000&type=Repositories&ref=searchresults`
 		axios.get(baseUrl).then(res => {
 			resolve(data2list(res.data))
 		}).catch(err => {

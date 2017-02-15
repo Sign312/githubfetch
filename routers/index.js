@@ -14,4 +14,14 @@ router.get('/list', async function (next) {
 	await next
 })
 
+router.get('/allList', async function (next) {
+	try {
+		let allList = await service.getAllList()
+		this.body = allList
+	} catch (e) {
+		this.throw(e)
+	}
+	await next
+})
+
 module.exports = router

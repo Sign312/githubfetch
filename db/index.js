@@ -28,7 +28,7 @@ db.getList = language => {
 				reject(err)
 				return
 			}
-			if(!res){
+			if (!res) {
 				reject('There is no matching result')
 			}
 			res = JSON.parse(res)

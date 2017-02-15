@@ -1,6 +1,8 @@
 let fetcher = require('../fetcher')
-let db = require('../db')
+let fileCmd = require('file-cmd')
 let config = require('../config')
+
+let db = config.db.type == 'local' ? require('../db/local') : require('../db')
 
 const service = {}
 
@@ -10,8 +12,28 @@ service.getList = async function (language) {
 	return list
 }
 
-service.updateList = async function () {
+service.getAllList = async function () {
+	let allList = {}
+	for (let i = 0; i < config.language.list.length; ++i) {
+		let item = config.language.list[i]
+		let list = await db.getList(item)
+		allList[item] = list
+	}
+	return allList
+}
 
+service.updateList = async function () {
+	for (let i = 0; i < config.language.list.length; ++i) {
+		let item = config.language.list[i]
+		let list = []
+		if (item == 'C++') {
+			list = await fetcher.getList('Cpp')
+		} else {
+			list = await fetcher.getList(item)
+		}
+		await db.setList(item, list)
+		await fileCmd.wait(1000)
+	}
 }
 
 module.exports = service

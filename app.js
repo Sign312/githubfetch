@@ -4,6 +4,7 @@ let bodyparser = require('koa-bodyparser')
 var path = require('path')
 let autoRoutes = require('koa-auto-routes')
 let koaStatic = require('koa-static')
+let schedule = require('./schedule')
 
 let app = new Koa()
 
@@ -14,5 +15,7 @@ app
 	.use(bodyparser())
 
 autoRoutes(app, path.join(__dirname, 'routers'))
+
+schedule.start()
 
 app.listen(9999)
