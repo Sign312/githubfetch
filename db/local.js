@@ -44,6 +44,4 @@ db.init = function () {
 	})
 }
 
-db.init()
-
 module.exports = db

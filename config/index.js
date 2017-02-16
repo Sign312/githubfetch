@@ -20,8 +20,8 @@ const config = {
 		]
 	},
 	db: {
-		// type: 'local',
-		type: 'redis',
+		type: 'local',
+		// type: 'redis',
 		initUrl: 'http://www.flypie.cn:9999/allList'
 	}
 }

@@ -32,8 +32,8 @@ service.updateList = async function () {
 			list = await fetcher.getList(item)
 		}
 		await db.setList(item, list)
-		//避免被github发现
-		await fileCmd.wait(2000)
+		//每发一次请求等待3秒避免被GitHub发现
+		await fileCmd.wait(3000)
 	}
 }
 

@@ -8,7 +8,6 @@ rule.minute = 40
 let schedule = {}
 
 schedule.start = () => {
-	service.updateList()
 	schedule.job = nodeSchedule.scheduleJob(rule, () => {
 		service.updateList()
 	});
