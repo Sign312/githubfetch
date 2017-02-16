@@ -23,9 +23,9 @@ db.setList = async function (language, list) {
 		await db.init()
 	}
 	let allListJson = await fileCmd.cat(localDataPath)
-	let allList = JSON.parse(localListJson.toString())
+	let allList = JSON.parse(allListJson.toString())
 	allList = Object.assign({}, allList, {
-		language: list
+		[language]: list
 	})
 	await fileCmd.rm(localDataPath)
 	await fileCmd.cat(localDataPath, JSON.stringify(allList))

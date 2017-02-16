@@ -26,7 +26,8 @@ function data2list(res) {
 			name: item.find('a.v-align-middle').text(),
 			url: githubBaseUrl + item.find('a.v-align-middle').attr('href'),
 			star: parseInt(excepetComma(item.find('a[aria-label=Stargazers]').text())),
-			language: item.find('.f6.text-gray.mt-2 span.mr-3').text()
+			language: (item.find('.f6.text-gray.mt-2 span.mr-3').text()).trim(),
+			description: (item.find('p.col-9.text-gray').text()).trim()
 		})
 	}
 	return list
