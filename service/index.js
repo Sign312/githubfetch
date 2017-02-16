@@ -40,4 +40,8 @@ service.updateList = async function () {
 	}
 }
 
+service.getLanguages = function () {
+	return config.language.list
+}
+
 module.exports = service

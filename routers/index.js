@@ -24,4 +24,9 @@ router.get('/allList', async function (next) {
 	await next
 })
 
+router.get('/languages', async function (next) {
+	this.body = service.getLanguages()
+	await next
+})
+
 module.exports = router
