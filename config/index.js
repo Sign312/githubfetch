@@ -1,7 +1,8 @@
 const config = {
 	redis: {
-		host: 'www.flypie.cn',
-		password: '03120019root'
+		//如果要使用redis存储请把host和password改成自己的
+		// host: 'www.flypie.cn',
+		// password: 'xxxxxxxxx'
 	},
 	language: {
 		defaultLanguage: 'JavaScript',
@@ -21,6 +22,7 @@ const config = {
 	},
 	db: {
 		type: 'local',
+		//如果要使用redis存储请把host和password改成自己的
 		// type: 'redis',
 		initUrl: 'http://www.flypie.cn:9999/allList'
 	}

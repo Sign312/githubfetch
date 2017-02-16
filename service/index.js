@@ -8,6 +8,9 @@ const service = {}
 
 service.getList = async function (language) {
 	language = language ? language : config.language.defaultLanguage
+	if (language == 'Cpp') {
+		language = 'C++'
+	}
 	let list = await db.getList(language)
 	return list
 }
