@@ -1,5 +1,6 @@
 let redis = require('redis')
 let config = require('../config')
+let axios = require('axios')
 
 const db = {}
 
@@ -36,5 +37,19 @@ db.getList = language => {
 		})
 	})
 }
+
+db.init = async function () {
+	try {
+		let res = await axios.get(config.db.initUrl)
+		let data = res.data
+		for (let key in data) {
+			await db.setList(key, data[key])
+		}
+	} catch (e) {
+		console.error(e)
+	}
+}
+
+db.init()
 
 module.exports = db
