@@ -12,20 +12,13 @@ html, body, #app {
 .main-content[data-v-a1703152] {
   width: 100%;
   height: 100%;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
   background-color: #f8f8f8;
 }
 .list[data-v-a1703152] {
   list-style: none;
   margin: 0;
   padding: 0;
-  -ms-flex: 3;
-      flex: 3;
+  height: 70%;
   overflow: scroll;
 }
 .list .item[data-v-a1703152] {
@@ -54,9 +47,11 @@ html, body, #app {
   margin-right: 28px;
 }
 .picker[data-v-a1703152] {
+  height: 30%;
   overflow: hidden;
-  -ms-flex: 1;
-      flex: 1;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
   background-color: #fff;
   border-top: 2px solid #ddd;
   box-shadow: 0 -1px 1px 1px #bbb;
@@ -2086,4 +2081,4 @@ display: inline-block;
 .mintui-success:before { content: "\E602"; }
 .mintui-field-success:before { content: "\E609"; }
 
-/*# sourceMappingURL=app.f1f11e6b7924439448d9913be027fe23.css.map*/
+/*# sourceMappingURL=app.d4bdc67137046317621817f963546f8e.css.map*/
