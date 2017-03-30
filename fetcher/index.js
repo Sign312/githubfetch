@@ -18,15 +18,15 @@ fetcher.getList = language => {
 
 function data2list(res) {
 	let $ = cheerio.load(res)
-	let items = $('li.public.source')
+	let items = $('.public.source')
 	let list = []
 	for (let i = 0; i < items.length; ++i) {
 		let item = items.eq(i)
 		list.push({
 			name: item.find('a.v-align-middle').text(),
 			url: githubBaseUrl + item.find('a.v-align-middle').attr('href'),
-			star: parseInt(excepetComma(item.find('a[aria-label=Stargazers]').text())),
-			language: (item.find('.f6.text-gray.mt-2 span.mr-3').text()).trim(),
+			star: parseInt(excepetComma(item.find('a.muted-link').text())),
+			language: (item.children('.d-table-cell').text()).trim(),
 			description: (item.find('p.col-9.text-gray').text()).trim()
 		})
 	}
